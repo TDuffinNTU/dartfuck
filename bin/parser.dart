@@ -14,7 +14,7 @@ class Machine {
   int instructionPointer = 0;
   int dataPointer = 0;
   int largestAddress = 0;
-  int returnAddress = 0;
+  List<int> returnStack = [];
 
   int get currentInstruction => program[instructionPointer];
 
@@ -32,7 +32,7 @@ class Machine {
   }
 
   printMemory(){
-    print(memory.getRange(0, largestAddress).toList());
+    print(memory.getRange(0, largestAddress+10).toList());
   }
   
 }

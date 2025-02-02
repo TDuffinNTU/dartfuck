@@ -52,9 +52,12 @@ void main(List<String> arguments) {
     print('Positional arguments: ${results.rest}');
 
     //final String? input = results.rest.firstOrNull;
+    final input =
+        '++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.';
+
     Machine machine = Machine(
-        input:
-            "++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.")
+        //input: "++>+++++[<+>-]++++++++[<++++++>-]<.",
+        input: input)
       ..run()
       ..printMemory();
 

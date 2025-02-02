@@ -62,7 +62,8 @@ class Instruction {
   }
 
   static void outputImpl(Machine machine) {
-    print(String.fromCharCode(machine.data));
+    //stdout.write(machine.data);
+    stdout.writeCharCode(machine.data);
   }
 
   static void inputImpl(Machine machine) {
@@ -70,21 +71,20 @@ class Instruction {
   }
 
   static void startLoopImpl(Machine machine) {
+    machine.returnStack.add(machine.instructionPointer);
     if (machine.data == 0) {
       final nextEndLoop = machine.program
-          .indexWhere((inst) => inst == endLoop, machine.dataPointer);
+          .indexWhere((inst) => inst == endLoop, machine.instructionPointer);
       if (nextEndLoop != -1) {
-        machine.returnAddress = machine.instructionPointer;
         machine.instructionPointer = nextEndLoop;
       }
     }
   }
 
   static void endLoopImpl(Machine machine) {
+    final returnAddress = machine.returnStack.removeLast();
     if (machine.data != 0) {
-    } else {
-      machine.instructionPointer = machine.returnAddress;
-      machine.returnAddress = 0;
+      machine.instructionPointer = returnAddress - 1;
     }
   }
 }
