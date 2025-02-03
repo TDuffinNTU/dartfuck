@@ -51,15 +51,12 @@ void main(List<String> arguments) {
     // Act on the arguments provided.
     print('Positional arguments: ${results.rest}');
 
-    //final String? input = results.rest.firstOrNull;
-    final input =
-        '++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.';
+    final String? input = results.rest.firstOrNull;
+    // final input =
+    //     '++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.';
 
-    Machine machine = Machine(
-        //input: "++>+++++[<+>-]++++++++[<++++++>-]<.",
-        input: input)
-      ..run()
-      ..printMemory();
+    Machine machine = Machine(input: input ?? '')..run();
+    print(machine);
 
     if (verbose) {
       print('[VERBOSE] All arguments: ${results.arguments}');

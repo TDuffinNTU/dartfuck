@@ -8,12 +8,18 @@
             "name": "Dart",
             "type": "dart",
             "request": "launch",
-            "program": "bin/main.dart"
+            "program": "bin/main.dart",
+            
+            "args": ["${input:input}"]
         },
+        
+    ],
+    "inputs": [
         {
-            "name": "dartfuck",
-            "request": "launch",
-            "type": "dart"
+            "id": "input",
+            "description": "what do",
+            "default": "[]+.-[]+++",
+            "type": "promptString",
         }
     ]
 }
