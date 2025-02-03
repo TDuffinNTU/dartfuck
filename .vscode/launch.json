@@ -5,12 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Dart",
+            "name": "default",
             "type": "dart",
             "request": "launch",
             "program": "bin/main.dart",
-            
             "args": ["${input:input}"]
+        },
+        
+        {
+            "name": "hello world",
+            "type": "dart",
+            "request": "launch",
+            "program": "bin/main.dart",
+            // Hello world in BF https://en.wikipedia.org/wiki/Brainfuck
+            "args": ["++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++."]
         },
         
     ],
@@ -20,6 +28,6 @@
             "description": "what do",
             "default": "[]+.-[]+++",
             "type": "promptString",
-        }
+        },
     ]
 }

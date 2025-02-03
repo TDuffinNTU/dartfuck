@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'dart:math';
 import 'dart:typed_data';
-import 'tokens.dart';
+import 'instruction.dart';
 
 const int kMemoryDefault = 30_000;
 

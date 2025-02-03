@@ -1,5 +1,5 @@
 import 'package:args/args.dart';
-import 'parser.dart';
+import 'machine.dart';
 
 const String version = '0.0.1';
 
@@ -52,8 +52,6 @@ void main(List<String> arguments) {
     print('Positional arguments: ${results.rest}');
 
     final String? input = results.rest.firstOrNull;
-    // final input =
-    //     '++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.';
 
     Machine machine = Machine(input: input ?? '')..run();
     print(machine);
